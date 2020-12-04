@@ -1,0 +1,3 @@
+/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/WebFramework.dir
