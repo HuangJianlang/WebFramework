@@ -11,11 +11,42 @@
 #include <list>
 #include <iostream>
 #include <fstream>
+#include <vector>
+
+class Logger;
 
 class LogEvent {
 public:
     using pointer = std::shared_ptr<LogEvent>;
     LogEvent();
+
+    const char* getFile() const {
+        return m_file;
+    }
+
+    int32_t getLine() const {
+        return m_line;
+    }
+
+    uint32_t getThreadId() const {
+        return m_threadid;
+    }
+
+    uint32_t getElapse() const {
+        return m_elapse;
+    }
+
+    uint32_t getFiberId() const {
+        return m_fiberid;
+    }
+
+    uint32_t getTime() const {
+        return m_time;
+    }
+
+    const std::string& getContent() const {
+        return m_content;
+    }
 
 private:
     const char* m_file = nullptr;
@@ -33,14 +64,37 @@ public:
     enum Level{
         DEBUG = 1, INFO, WARN, ERROR, FATAL
     };
+
+    static const char* ToString(LogLevel::Level level);
 };
 
+//=============================================================
 class LogFormatter {
 public:
     using pointer = std::shared_ptr<LogFormatter>;
 
-    std::string format(LogEvent::pointer event);
+    LogFormatter(const std::string& pattern);
+
+    //%t    %thread_id %m%n
+    std::string format(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::pointer event);
+
+public:
+    class FormatItem {
+    public:
+        using pointer = std::shared_ptr<FormatItem>;
+        explicit FormatItem(const std::string& fmt = "") {};
+        virtual ~FormatItem();
+        virtual void format(std::ostream& stream, std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::pointer event) = 0;
+    };
+
+    void init();
+private:
+    std::vector<FormatItem::pointer> m_items;
+    std::string m_pattern;
+
 };
+
+//=============================================================
 
 //日志输出路径
 class LogAppender {
@@ -48,7 +102,7 @@ public:
     using pointer = std::shared_ptr<LogAppender>;
     virtual ~LogAppender();
 
-    virtual void log(LogLevel::Level level, LogEvent::pointer event) = 0;
+    virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::pointer event) = 0;
 
     void setFormatter(LogFormatter::pointer val){
         m_formatter = val;
@@ -89,6 +143,10 @@ public:
         m_level = level;
     }
 
+    const std::string& getName() const {
+        return m_name;
+    }
+
 private:
     std::string m_name;
     LogLevel::Level m_level; //满足日志级别的才可输出
@@ -98,14 +156,14 @@ private:
 class StdoutLogAppender : public LogAppender{
 public:
     using pointer = std::shared_ptr<StdoutLogAppender>;
-    virtual void log(LogLevel::Level level, LogEvent::pointer event) override;
+    virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::pointer event) override;
 };
 
 class FileLogAppender : public LogAppender{
 public:
     using pointer = std::shared_ptr<FileLogAppender>;
     FileLogAppender(const std::string& filename);
-    virtual void log(LogLevel::Level level, LogEvent::pointer event) override ;
+    virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::pointer event) override ;
 
     bool reopen();
 private:

@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/roy/Documents/C++/WebFramework/log.cpp
+sstream
+-
+log.h
+/Users/roy/Documents/C++/WebFramework/log.h
+
+/Users/roy/Documents/C++/WebFramework/log.h
+string
+-
+cstdint
+-
+memory
+-
+list
+-
+iostream
+-
+fstream
+-
+vector
+-
+
