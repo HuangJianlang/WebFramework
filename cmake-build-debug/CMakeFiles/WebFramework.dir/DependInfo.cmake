@@ -4,8 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/roy/Documents/C++/WebFramework/log.cpp" "/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/WebFramework.dir/log.cpp.o"
-  "/Users/roy/Documents/C++/WebFramework/main.cpp" "/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/WebFramework.dir/main.cpp.o"
+  "/Users/roy/Documents/C++/WebFramework/components/log.cpp" "/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/WebFramework.dir/components/log.cpp.o"
+  "/Users/roy/Documents/C++/WebFramework/components/singleton.cpp" "/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/WebFramework.dir/components/singleton.cpp.o"
+  "/Users/roy/Documents/C++/WebFramework/components/utils.cpp" "/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/WebFramework.dir/components/utils.cpp.o"
+  "/Users/roy/Documents/C++/WebFramework/test/test_log.cpp" "/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/WebFramework.dir/test/test_log.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

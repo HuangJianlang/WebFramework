@@ -6,13 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/Users/roy/Documents/C++/WebFramework/log.cpp
+/Users/roy/Documents/C++/WebFramework/components/log.cpp
 sstream
 -
+map
+-
 log.h
-/Users/roy/Documents/C++/WebFramework/log.h
+/Users/roy/Documents/C++/WebFramework/components/log.h
+iostream
+-
+functional
+-
+ctime
+-
 
-/Users/roy/Documents/C++/WebFramework/log.h
+/Users/roy/Documents/C++/WebFramework/components/log.h
+utils.h
+/Users/roy/Documents/C++/WebFramework/components/utils.h
+singleton.h
+/Users/roy/Documents/C++/WebFramework/components/singleton.h
+sstream
+-
 string
 -
 cstdint
@@ -27,4 +41,28 @@ fstream
 -
 vector
 -
+map
+-
+
+/Users/roy/Documents/C++/WebFramework/components/singleton.h
+memory
+-
+
+/Users/roy/Documents/C++/WebFramework/components/utils.h
+pthread.h
+-
+sys/types.h
+-
+cstdint
+-
+
+/Users/roy/Documents/C++/WebFramework/test/test_log.cpp
+iostream
+-
+../components/log.h
+/Users/roy/Documents/C++/WebFramework/components/log.h
+../components/utils.h
+/Users/roy/Documents/C++/WebFramework/components/utils.h
+../components/singleton.h
+/Users/roy/Documents/C++/WebFramework/components/singleton.h
 

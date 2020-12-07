@@ -18,6 +18,9 @@ SUFFIXES =
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -57,45 +60,75 @@ include CMakeFiles/WebFramework.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/WebFramework.dir/flags.make
 
-CMakeFiles/WebFramework.dir/main.cpp.o: CMakeFiles/WebFramework.dir/flags.make
-CMakeFiles/WebFramework.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/WebFramework.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/WebFramework.dir/main.cpp.o -c /Users/roy/Documents/C++/WebFramework/main.cpp
+CMakeFiles/WebFramework.dir/components/log.cpp.o: CMakeFiles/WebFramework.dir/flags.make
+CMakeFiles/WebFramework.dir/components/log.cpp.o: ../components/log.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/WebFramework.dir/components/log.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/WebFramework.dir/components/log.cpp.o -c /Users/roy/Documents/C++/WebFramework/components/log.cpp
 
-CMakeFiles/WebFramework.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebFramework.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roy/Documents/C++/WebFramework/main.cpp > CMakeFiles/WebFramework.dir/main.cpp.i
+CMakeFiles/WebFramework.dir/components/log.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebFramework.dir/components/log.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roy/Documents/C++/WebFramework/components/log.cpp > CMakeFiles/WebFramework.dir/components/log.cpp.i
 
-CMakeFiles/WebFramework.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebFramework.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roy/Documents/C++/WebFramework/main.cpp -o CMakeFiles/WebFramework.dir/main.cpp.s
+CMakeFiles/WebFramework.dir/components/log.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebFramework.dir/components/log.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roy/Documents/C++/WebFramework/components/log.cpp -o CMakeFiles/WebFramework.dir/components/log.cpp.s
 
-CMakeFiles/WebFramework.dir/log.cpp.o: CMakeFiles/WebFramework.dir/flags.make
-CMakeFiles/WebFramework.dir/log.cpp.o: ../log.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/WebFramework.dir/log.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/WebFramework.dir/log.cpp.o -c /Users/roy/Documents/C++/WebFramework/log.cpp
+CMakeFiles/WebFramework.dir/test/test_log.cpp.o: CMakeFiles/WebFramework.dir/flags.make
+CMakeFiles/WebFramework.dir/test/test_log.cpp.o: ../test/test_log.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/WebFramework.dir/test/test_log.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/WebFramework.dir/test/test_log.cpp.o -c /Users/roy/Documents/C++/WebFramework/test/test_log.cpp
 
-CMakeFiles/WebFramework.dir/log.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebFramework.dir/log.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roy/Documents/C++/WebFramework/log.cpp > CMakeFiles/WebFramework.dir/log.cpp.i
+CMakeFiles/WebFramework.dir/test/test_log.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebFramework.dir/test/test_log.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roy/Documents/C++/WebFramework/test/test_log.cpp > CMakeFiles/WebFramework.dir/test/test_log.cpp.i
 
-CMakeFiles/WebFramework.dir/log.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebFramework.dir/log.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roy/Documents/C++/WebFramework/log.cpp -o CMakeFiles/WebFramework.dir/log.cpp.s
+CMakeFiles/WebFramework.dir/test/test_log.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebFramework.dir/test/test_log.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roy/Documents/C++/WebFramework/test/test_log.cpp -o CMakeFiles/WebFramework.dir/test/test_log.cpp.s
+
+CMakeFiles/WebFramework.dir/components/utils.cpp.o: CMakeFiles/WebFramework.dir/flags.make
+CMakeFiles/WebFramework.dir/components/utils.cpp.o: ../components/utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/WebFramework.dir/components/utils.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/WebFramework.dir/components/utils.cpp.o -c /Users/roy/Documents/C++/WebFramework/components/utils.cpp
+
+CMakeFiles/WebFramework.dir/components/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebFramework.dir/components/utils.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roy/Documents/C++/WebFramework/components/utils.cpp > CMakeFiles/WebFramework.dir/components/utils.cpp.i
+
+CMakeFiles/WebFramework.dir/components/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebFramework.dir/components/utils.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roy/Documents/C++/WebFramework/components/utils.cpp -o CMakeFiles/WebFramework.dir/components/utils.cpp.s
+
+CMakeFiles/WebFramework.dir/components/singleton.cpp.o: CMakeFiles/WebFramework.dir/flags.make
+CMakeFiles/WebFramework.dir/components/singleton.cpp.o: ../components/singleton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/WebFramework.dir/components/singleton.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/WebFramework.dir/components/singleton.cpp.o -c /Users/roy/Documents/C++/WebFramework/components/singleton.cpp
+
+CMakeFiles/WebFramework.dir/components/singleton.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebFramework.dir/components/singleton.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/roy/Documents/C++/WebFramework/components/singleton.cpp > CMakeFiles/WebFramework.dir/components/singleton.cpp.i
+
+CMakeFiles/WebFramework.dir/components/singleton.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebFramework.dir/components/singleton.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/roy/Documents/C++/WebFramework/components/singleton.cpp -o CMakeFiles/WebFramework.dir/components/singleton.cpp.s
 
 # Object files for target WebFramework
 WebFramework_OBJECTS = \
-"CMakeFiles/WebFramework.dir/main.cpp.o" \
-"CMakeFiles/WebFramework.dir/log.cpp.o"
+"CMakeFiles/WebFramework.dir/components/log.cpp.o" \
+"CMakeFiles/WebFramework.dir/test/test_log.cpp.o" \
+"CMakeFiles/WebFramework.dir/components/utils.cpp.o" \
+"CMakeFiles/WebFramework.dir/components/singleton.cpp.o"
 
 # External object files for target WebFramework
 WebFramework_EXTERNAL_OBJECTS =
 
-WebFramework: CMakeFiles/WebFramework.dir/main.cpp.o
-WebFramework: CMakeFiles/WebFramework.dir/log.cpp.o
+WebFramework: CMakeFiles/WebFramework.dir/components/log.cpp.o
+WebFramework: CMakeFiles/WebFramework.dir/test/test_log.cpp.o
+WebFramework: CMakeFiles/WebFramework.dir/components/utils.cpp.o
+WebFramework: CMakeFiles/WebFramework.dir/components/singleton.cpp.o
 WebFramework: CMakeFiles/WebFramework.dir/build.make
 WebFramework: CMakeFiles/WebFramework.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable WebFramework"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable WebFramework"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/WebFramework.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

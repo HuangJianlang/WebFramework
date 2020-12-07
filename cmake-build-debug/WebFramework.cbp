@@ -80,13 +80,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/roy/Documents/C++/WebFramework/log.cpp">
+		<Unit filename="/Users/roy/Documents/C++/WebFramework/components/log.cpp">
 			<Option target="WebFramework"/>
 		</Unit>
-		<Unit filename="/Users/roy/Documents/C++/WebFramework/log.h">
+		<Unit filename="/Users/roy/Documents/C++/WebFramework/components/log.h">
 			<Option target="WebFramework"/>
 		</Unit>
-		<Unit filename="/Users/roy/Documents/C++/WebFramework/main.cpp">
+		<Unit filename="/Users/roy/Documents/C++/WebFramework/components/singleton.cpp">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/Users/roy/Documents/C++/WebFramework/components/singleton.h">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/Users/roy/Documents/C++/WebFramework/components/utils.cpp">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/Users/roy/Documents/C++/WebFramework/components/utils.h">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/Users/roy/Documents/C++/WebFramework/test/test_log.cpp">
 			<Option target="WebFramework"/>
 		</Unit>
 		<Unit filename="/Users/roy/Documents/C++/WebFramework/CMakeLists.txt">

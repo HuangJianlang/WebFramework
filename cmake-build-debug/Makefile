@@ -23,6 +23,9 @@ SUFFIXES =
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -123,59 +126,113 @@ WebFramework/fast:
 	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/build
 .PHONY : WebFramework/fast
 
-log.o: log.cpp.o
+components/log.o: components/log.cpp.o
 
-.PHONY : log.o
-
-# target to build an object file
-log.cpp.o:
-	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/log.cpp.o
-.PHONY : log.cpp.o
-
-log.i: log.cpp.i
-
-.PHONY : log.i
-
-# target to preprocess a source file
-log.cpp.i:
-	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/log.cpp.i
-.PHONY : log.cpp.i
-
-log.s: log.cpp.s
-
-.PHONY : log.s
-
-# target to generate assembly for a file
-log.cpp.s:
-	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/log.cpp.s
-.PHONY : log.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
+.PHONY : components/log.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/main.cpp.o
-.PHONY : main.cpp.o
+components/log.cpp.o:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/log.cpp.o
+.PHONY : components/log.cpp.o
 
-main.i: main.cpp.i
+components/log.i: components/log.cpp.i
 
-.PHONY : main.i
+.PHONY : components/log.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/main.cpp.i
-.PHONY : main.cpp.i
+components/log.cpp.i:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/log.cpp.i
+.PHONY : components/log.cpp.i
 
-main.s: main.cpp.s
+components/log.s: components/log.cpp.s
 
-.PHONY : main.s
+.PHONY : components/log.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/main.cpp.s
-.PHONY : main.cpp.s
+components/log.cpp.s:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/log.cpp.s
+.PHONY : components/log.cpp.s
+
+components/singleton.o: components/singleton.cpp.o
+
+.PHONY : components/singleton.o
+
+# target to build an object file
+components/singleton.cpp.o:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/singleton.cpp.o
+.PHONY : components/singleton.cpp.o
+
+components/singleton.i: components/singleton.cpp.i
+
+.PHONY : components/singleton.i
+
+# target to preprocess a source file
+components/singleton.cpp.i:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/singleton.cpp.i
+.PHONY : components/singleton.cpp.i
+
+components/singleton.s: components/singleton.cpp.s
+
+.PHONY : components/singleton.s
+
+# target to generate assembly for a file
+components/singleton.cpp.s:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/singleton.cpp.s
+.PHONY : components/singleton.cpp.s
+
+components/utils.o: components/utils.cpp.o
+
+.PHONY : components/utils.o
+
+# target to build an object file
+components/utils.cpp.o:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/utils.cpp.o
+.PHONY : components/utils.cpp.o
+
+components/utils.i: components/utils.cpp.i
+
+.PHONY : components/utils.i
+
+# target to preprocess a source file
+components/utils.cpp.i:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/utils.cpp.i
+.PHONY : components/utils.cpp.i
+
+components/utils.s: components/utils.cpp.s
+
+.PHONY : components/utils.s
+
+# target to generate assembly for a file
+components/utils.cpp.s:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/utils.cpp.s
+.PHONY : components/utils.cpp.s
+
+test/test_log.o: test/test_log.cpp.o
+
+.PHONY : test/test_log.o
+
+# target to build an object file
+test/test_log.cpp.o:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/test/test_log.cpp.o
+.PHONY : test/test_log.cpp.o
+
+test/test_log.i: test/test_log.cpp.i
+
+.PHONY : test/test_log.i
+
+# target to preprocess a source file
+test/test_log.cpp.i:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/test/test_log.cpp.i
+.PHONY : test/test_log.cpp.i
+
+test/test_log.s: test/test_log.cpp.s
+
+.PHONY : test/test_log.s
+
+# target to generate assembly for a file
+test/test_log.cpp.s:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/test/test_log.cpp.s
+.PHONY : test/test_log.cpp.s
 
 # Help Target
 help:
@@ -186,12 +243,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... WebFramework"
-	@echo "... log.o"
-	@echo "... log.i"
-	@echo "... log.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... components/log.o"
+	@echo "... components/log.i"
+	@echo "... components/log.s"
+	@echo "... components/singleton.o"
+	@echo "... components/singleton.i"
+	@echo "... components/singleton.s"
+	@echo "... components/utils.o"
+	@echo "... components/utils.i"
+	@echo "... components/utils.s"
+	@echo "... test/test_log.o"
+	@echo "... test/test_log.i"
+	@echo "... test/test_log.s"
 .PHONY : help
 
 

@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/WebFramework.dir/log.cpp.o"
-  "CMakeFiles/WebFramework.dir/main.cpp.o"
+  "CMakeFiles/WebFramework.dir/components/log.cpp.o"
+  "CMakeFiles/WebFramework.dir/components/singleton.cpp.o"
+  "CMakeFiles/WebFramework.dir/components/utils.cpp.o"
+  "CMakeFiles/WebFramework.dir/test/test_log.cpp.o"
   "WebFramework"
   "WebFramework.pdb"
 )
