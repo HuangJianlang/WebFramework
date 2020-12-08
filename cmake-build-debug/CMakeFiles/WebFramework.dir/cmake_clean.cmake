@@ -1,10 +1,9 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/WebFramework.dir/components/ConfigVarBase.cpp.o"
   "CMakeFiles/WebFramework.dir/components/log.cpp.o"
-  "CMakeFiles/WebFramework.dir/components/singleton.cpp.o"
   "CMakeFiles/WebFramework.dir/components/utils.cpp.o"
-  "CMakeFiles/WebFramework.dir/test/test_log.cpp.o"
-  "WebFramework"
-  "WebFramework.pdb"
+  "libWebFramework.dylib"
+  "libWebFramework.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

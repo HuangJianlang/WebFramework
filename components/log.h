@@ -37,6 +37,8 @@
 #define LOG_FMT_ERROR(logger, fmt, ...)  LOG_FMR_LEVEL(logger, LogLevel::ERROR, fmt, __VA_ARGS__)
 #define LOG_FMT_FATAL(logger, fmt, ...)  LOG_FMR_LEVEL(logger, LogLevel::FATAL, fmt, __VA_ARGS__)
 
+#define LOG_ROOT() LoggerMgr::GetInstance()->getRoot()
+
 class Logger;
 //====================== Defination of LogLevel ======================
 class LogLevel {
@@ -121,7 +123,9 @@ public:
         return m_event;
     }
 
-    std::stringstream& getStringstream();
+    std::stringstream& getStringstream() {
+        return m_event->getStringStream();
+    }
 
 private:
     LogEvent::pointer m_event;
@@ -247,6 +251,9 @@ public:
 
     void init();
 
+    Logger::pointer getRoot() const {
+        return m_root;
+    }
 private:
     std::map<std::string, Logger::pointer> m_loggers;
     Logger::pointer m_root;

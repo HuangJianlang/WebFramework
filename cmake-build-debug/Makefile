@@ -114,6 +114,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_config
+
+# Build rule for target.
+test_config: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_config
+.PHONY : test_config
+
+# fast build rule for target.
+test_config/fast:
+	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
+.PHONY : test_config/fast
+
+#=============================================================================
+# Target rules for targets named test_log
+
+# Build rule for target.
+test_log: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_log
+.PHONY : test_log
+
+# fast build rule for target.
+test_log/fast:
+	$(MAKE) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/build
+.PHONY : test_log/fast
+
+#=============================================================================
 # Target rules for targets named WebFramework
 
 # Build rule for target.
@@ -125,6 +151,33 @@ WebFramework: cmake_check_build_system
 WebFramework/fast:
 	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/build
 .PHONY : WebFramework/fast
+
+components/ConfigVarBase.o: components/ConfigVarBase.cpp.o
+
+.PHONY : components/ConfigVarBase.o
+
+# target to build an object file
+components/ConfigVarBase.cpp.o:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/ConfigVarBase.cpp.o
+.PHONY : components/ConfigVarBase.cpp.o
+
+components/ConfigVarBase.i: components/ConfigVarBase.cpp.i
+
+.PHONY : components/ConfigVarBase.i
+
+# target to preprocess a source file
+components/ConfigVarBase.cpp.i:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/ConfigVarBase.cpp.i
+.PHONY : components/ConfigVarBase.cpp.i
+
+components/ConfigVarBase.s: components/ConfigVarBase.cpp.s
+
+.PHONY : components/ConfigVarBase.s
+
+# target to generate assembly for a file
+components/ConfigVarBase.cpp.s:
+	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/ConfigVarBase.cpp.s
+.PHONY : components/ConfigVarBase.cpp.s
 
 components/log.o: components/log.cpp.o
 
@@ -153,33 +206,6 @@ components/log.cpp.s:
 	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/log.cpp.s
 .PHONY : components/log.cpp.s
 
-components/singleton.o: components/singleton.cpp.o
-
-.PHONY : components/singleton.o
-
-# target to build an object file
-components/singleton.cpp.o:
-	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/singleton.cpp.o
-.PHONY : components/singleton.cpp.o
-
-components/singleton.i: components/singleton.cpp.i
-
-.PHONY : components/singleton.i
-
-# target to preprocess a source file
-components/singleton.cpp.i:
-	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/singleton.cpp.i
-.PHONY : components/singleton.cpp.i
-
-components/singleton.s: components/singleton.cpp.s
-
-.PHONY : components/singleton.s
-
-# target to generate assembly for a file
-components/singleton.cpp.s:
-	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/singleton.cpp.s
-.PHONY : components/singleton.cpp.s
-
 components/utils.o: components/utils.cpp.o
 
 .PHONY : components/utils.o
@@ -207,32 +233,59 @@ components/utils.cpp.s:
 	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/components/utils.cpp.s
 .PHONY : components/utils.cpp.s
 
-test/test_log.o: test/test_log.cpp.o
+tests/test_config.o: tests/test_config.cpp.o
 
-.PHONY : test/test_log.o
+.PHONY : tests/test_config.o
 
 # target to build an object file
-test/test_log.cpp.o:
-	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/test/test_log.cpp.o
-.PHONY : test/test_log.cpp.o
+tests/test_config.cpp.o:
+	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cpp.o
+.PHONY : tests/test_config.cpp.o
 
-test/test_log.i: test/test_log.cpp.i
+tests/test_config.i: tests/test_config.cpp.i
 
-.PHONY : test/test_log.i
+.PHONY : tests/test_config.i
 
 # target to preprocess a source file
-test/test_log.cpp.i:
-	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/test/test_log.cpp.i
-.PHONY : test/test_log.cpp.i
+tests/test_config.cpp.i:
+	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cpp.i
+.PHONY : tests/test_config.cpp.i
 
-test/test_log.s: test/test_log.cpp.s
+tests/test_config.s: tests/test_config.cpp.s
 
-.PHONY : test/test_log.s
+.PHONY : tests/test_config.s
 
 # target to generate assembly for a file
-test/test_log.cpp.s:
-	$(MAKE) -f CMakeFiles/WebFramework.dir/build.make CMakeFiles/WebFramework.dir/test/test_log.cpp.s
-.PHONY : test/test_log.cpp.s
+tests/test_config.cpp.s:
+	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cpp.s
+.PHONY : tests/test_config.cpp.s
+
+tests/test_log.o: tests/test_log.cpp.o
+
+.PHONY : tests/test_log.o
+
+# target to build an object file
+tests/test_log.cpp.o:
+	$(MAKE) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/tests/test_log.cpp.o
+.PHONY : tests/test_log.cpp.o
+
+tests/test_log.i: tests/test_log.cpp.i
+
+.PHONY : tests/test_log.i
+
+# target to preprocess a source file
+tests/test_log.cpp.i:
+	$(MAKE) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/tests/test_log.cpp.i
+.PHONY : tests/test_log.cpp.i
+
+tests/test_log.s: tests/test_log.cpp.s
+
+.PHONY : tests/test_log.s
+
+# target to generate assembly for a file
+tests/test_log.cpp.s:
+	$(MAKE) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/tests/test_log.cpp.s
+.PHONY : tests/test_log.cpp.s
 
 # Help Target
 help:
@@ -242,19 +295,24 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test_config"
+	@echo "... test_log"
 	@echo "... WebFramework"
+	@echo "... components/ConfigVarBase.o"
+	@echo "... components/ConfigVarBase.i"
+	@echo "... components/ConfigVarBase.s"
 	@echo "... components/log.o"
 	@echo "... components/log.i"
 	@echo "... components/log.s"
-	@echo "... components/singleton.o"
-	@echo "... components/singleton.i"
-	@echo "... components/singleton.s"
 	@echo "... components/utils.o"
 	@echo "... components/utils.i"
 	@echo "... components/utils.s"
-	@echo "... test/test_log.o"
-	@echo "... test/test_log.i"
-	@echo "... test/test_log.s"
+	@echo "... tests/test_config.o"
+	@echo "... tests/test_config.i"
+	@echo "... tests/test_config.s"
+	@echo "... tests/test_log.o"
+	@echo "... tests/test_log.i"
+	@echo "... tests/test_log.s"
 .PHONY : help
 
 

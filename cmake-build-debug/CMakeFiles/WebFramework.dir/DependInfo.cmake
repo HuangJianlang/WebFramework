@@ -4,15 +4,21 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/roy/Documents/C++/WebFramework/components/ConfigVarBase.cpp" "/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/WebFramework.dir/components/ConfigVarBase.cpp.o"
   "/Users/roy/Documents/C++/WebFramework/components/log.cpp" "/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/WebFramework.dir/components/log.cpp.o"
-  "/Users/roy/Documents/C++/WebFramework/components/singleton.cpp" "/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/WebFramework.dir/components/singleton.cpp.o"
   "/Users/roy/Documents/C++/WebFramework/components/utils.cpp" "/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/WebFramework.dir/components/utils.cpp.o"
-  "/Users/roy/Documents/C++/WebFramework/test/test_log.cpp" "/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles/WebFramework.dir/test/test_log.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "WebFramework_EXPORTS"
+  )
+
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/local/Cellar/boost/1.72.0/include"
+  "../."
   )
 
 # Targets to which this target links.

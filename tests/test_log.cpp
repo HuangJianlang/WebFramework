@@ -25,15 +25,15 @@ int main(int argc, char* argv[]){
 
     logger->addAppender(file_appender);
     //LogEvent::pointer event(new LogEvent(__FILE__, __LINE__, 0, GetThreadId(), GetFiberId(), time(0)));
-    LOG_INFO(logger) << "test macro\n";
+    LOG_INFO(logger) << "tests macro\n";
 
-    LOG_FMT_ERROR(logger, "test macro fmt error %s", "aa");
+    LOG_FMT_ERROR(logger, "tests macro fmt error %s", "aa");
 
 
     cout << "testing Singleton\n";
 
     auto it = LoggerMgr ::GetInstance()->getLogger("xx");
-    LOG_INFO(it) << "test for singleton\n";
+    LOG_INFO(it) << "tests for singleton\n";
     cout << "Testing Log ends\n";
     return 0;
 }

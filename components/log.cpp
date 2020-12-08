@@ -44,10 +44,6 @@ LogEventWrap::~LogEventWrap(){
     m_event->getLogger()->log(m_event->getLevel(), m_event);
 }
 
-std::stringstream& LogEventWrap::getStringstream(){
-    return m_event->getStringStream();
-}
-
 //====================== Implementation of LogFormatter::FormatItem ======================
 class MessageFormatItem : public LogFormatter::FormatItem{
 public:
@@ -385,7 +381,7 @@ void LogFormatter::init() {
                 m_items.push_back(it->second(std::get<1>(i)));
             }
         }
-        //for test: display parse result
+        //for tests: display parse result
         //std::cout << '(' << std::get<0>(i) << ") - (" << std::get<1>(i) << ") - (" << std::get<2>(i) << ')' << std::endl;
     }
 

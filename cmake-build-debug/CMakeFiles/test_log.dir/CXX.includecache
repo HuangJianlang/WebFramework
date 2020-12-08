@@ -6,20 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/roy/Documents/C++/WebFramework/components/log.cpp
-sstream
--
-map
--
-log.h
-/Users/roy/Documents/C++/WebFramework/components/log.h
-iostream
--
-functional
--
-ctime
--
-
 /Users/roy/Documents/C++/WebFramework/components/log.h
 utils.h
 /Users/roy/Documents/C++/WebFramework/components/utils.h
@@ -55,4 +41,14 @@ sys/types.h
 -
 cstdint
 -
+
+/Users/roy/Documents/C++/WebFramework/tests/test_log.cpp
+iostream
+-
+../components/log.h
+/Users/roy/Documents/C++/WebFramework/components/log.h
+../components/utils.h
+/Users/roy/Documents/C++/WebFramework/components/utils.h
+../components/singleton.h
+/Users/roy/Documents/C++/WebFramework/components/singleton.h
 
