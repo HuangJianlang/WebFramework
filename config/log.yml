@@ -1,0 +1,7 @@
+system:
+ port: 9900
+ value: 15
+ int_vec: [5,6,7]
+ int_list: [8,9,10]
+ int_set: [80, 90, 100]
+ int_hashset: [77, 88, 99]

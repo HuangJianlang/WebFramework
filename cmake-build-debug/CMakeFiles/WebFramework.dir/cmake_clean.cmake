@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/WebFramework.dir/components/ConfigVarBase.cpp.o"
+  "CMakeFiles/WebFramework.dir/components/config.cpp.o"
   "CMakeFiles/WebFramework.dir/components/log.cpp.o"
   "CMakeFiles/WebFramework.dir/components/utils.cpp.o"
   "libWebFramework.dylib"

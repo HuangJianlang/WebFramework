@@ -2,35 +2,29 @@ cmake_minimum_required(VERSION 3.15)
 project(WebFramework)
 
 set(CMAKE_VERBOSE_MAKEFILE  ON)
-
+set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -oO -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function")
 set(CMAKE_CXX_STANDARD 11)
 
-#添加头文件搜索路径
-include_directories(/usr/local/Cellar/boost/1.72.0/include/)
-
-#添加库文件搜索路径
-link_directories(/usr/local/Cellar/boost/1.72.0/lib/)
-
 include_directories(.)
+include_directories(/usr/local/include/)
+link_directories(/usr/local/lib)
+
+find_library(YAMLCPP yaml-cpp)
+message("***" ${YAMLCPP})
 
 set(LIB_SRC
         components/log.cpp
         components/utils.cpp
-        components/ConfigVarBase.cpp
+        components/config.cpp
     )
 
 add_library(WebFramework SHARED ${LIB_SRC})
+target_link_libraries(WebFramework yaml-cpp)
 
 add_executable(test_log tests/test_log.cpp)
 add_dependencies(test_log WebFramework)
 target_link_libraries(test_log WebFramework)
 
-
 add_executable(test_config tests/test_config.cpp)
 add_dependencies(test_config WebFramework)
-target_link_libraries(test_config WebFramework)
-#add_executable(WebFramework components/log.cpp components/log.h components/utils.cpp components/utils.h components/singleton.cpp components/singleton.h components/ConfigVarBase.cpp components/ConfigVarBase.h tests/test_config.cpp)
-
-#for testing main
-#add_executable(tests/test_log.cpp.cpp)
-#add_executable(tests/test_config.cpp)
+target_link_libraries(test_config WebFramework ${YAMLCPP})
