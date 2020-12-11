@@ -37,6 +37,24 @@ unordered_set
 -
 unordered_map
 -
+functional
+-
+
+/Users/roy/Documents/C++/WebFramework/components/log.cpp
+sstream
+-
+map
+-
+log.h
+/Users/roy/Documents/C++/WebFramework/components/log.h
+config.h
+/Users/roy/Documents/C++/WebFramework/components/config.h
+iostream
+-
+functional
+-
+ctime
+-
 
 /Users/roy/Documents/C++/WebFramework/components/log.h
 utils.h

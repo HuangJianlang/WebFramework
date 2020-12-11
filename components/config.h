@@ -18,6 +18,7 @@
 #include <set>
 #include <unordered_set>
 #include <unordered_map>
+#include <functional>
 
 class ConfigVarBase {
 public:
@@ -41,7 +42,7 @@ public:
 
     virtual std::string toString() = 0;
     virtual bool fromString(const std::string& val) = 0;
-
+    virtual std::string getTypeName() = 0;
 protected:
     std::string m_name;
     std::string m_description;
@@ -206,6 +207,81 @@ public:
         return ss.str();
     }
 };
+
+template<typename Target>
+class LexicalCast<std::string, std::map<std::string, Target>>{
+private:
+    using ReturnType = std::map<std::string, Target>;
+
+public:
+    ReturnType operator()(const std::string& data){
+        std::stringstream ss;
+        YAML::Node node = YAML::Load(data);
+        ReturnType ret;
+        for(auto iter = node.begin(); iter != node.end(); iter++){
+            ss.str("");
+            //value
+            ss << iter->second;
+            ret.insert(std::make_pair(iter->first.Scalar(), LexicalCast<std::string, Target>()(ss.str())));
+        }
+        return ret;
+    }
+};
+
+template<typename Source>
+class LexicalCast<std::map<std::string, Source>, std::string> {
+private:
+    using SourceType = std::map<std::string, Source>;
+
+public:
+    std::string operator()(const SourceType& data){
+        std::stringstream ss;
+        YAML::Node node;
+        for (auto& i : data){
+            node[i.first] = YAML::Load(LexicalCast<Source, std::string>()(i.second));
+        }
+        ss << node;
+        return ss.str();
+    }
+};
+
+//hash map
+template<typename Target>
+class LexicalCast<std::string, std::unordered_map<std::string, Target>>{
+private:
+    using ReturnType = std::unordered_map<std::string, Target>;
+
+public:
+    ReturnType operator()(const std::string& data){
+        std::stringstream ss;
+        YAML::Node node = YAML::Load(data);
+        ReturnType ret;
+        for(auto iter = node.begin(); iter != node.end(); iter++){
+            ss.str("");
+            //value
+            ss << iter->second;
+            ret.insert(std::make_pair(iter->first.Scalar(), LexicalCast<std::string, Target>()(ss.str())));
+        }
+        return ret;
+    }
+};
+
+template<typename Source>
+class LexicalCast<std::unordered_map<std::string, Source>, std::string> {
+private:
+    using SourceType = std::unordered_map<std::string, Source>;
+
+public:
+    std::string operator()(const SourceType& data){
+        std::stringstream ss;
+        YAML::Node node;
+        for (auto& i : data){
+            node[i.first] = YAML::Load(LexicalCast<Source, std::string>()(i.second));
+        }
+        ss << node;
+        return ss.str();
+    }
+};
 //===========================stl support=====================
 
 template<typename T, typename FromStr = LexicalCast<std::string, T>, typename ToStr = LexicalCast<T, std::string>>
@@ -213,6 +289,7 @@ template<typename T, typename FromStr = LexicalCast<std::string, T>, typename To
 class ConfigVar : public ConfigVarBase {
 public:
     using pointer = std::shared_ptr<ConfigVar>;
+    using on_change_callback = std::function<void (const T& old_value, const T& new_value)>;
 
     ConfigVar(const std::string& name, const T& default_value, const std::string& description = "")
         : ConfigVarBase(name, description), m_val(default_value) {
@@ -234,7 +311,7 @@ public:
     virtual bool fromString(const std::string& val) override {
         try {
             //m_val = boost::lexical_cast<T>(val);
-            m_val = FromStr()(val);
+            setValue(FromStr()(val));
         } catch (std::exception& e) {
             LOG_ERROR(LOG_ROOT()) << "ConfigVar::fromString exception" << e.what() << " convert: " << "string to " << typeid(m_val).name();
         }
@@ -246,52 +323,95 @@ public:
     }
 
     void setValue(const T& val) {
+        if (val == m_val){
+            return;
+        }
+        for (auto& i : m_callbacks){
+            i.second(m_val, val);
+        }
         m_val = val;
     }
 
+    std::string getTypeName() override {
+        return typeid(T).name();
+    }
+
+    void addListener(uint64_t key, on_change_callback cb) {
+        m_callbacks[key] = cb;
+    }
+
+    void delListener(uint64_t key){
+        m_callbacks.erase(key);
+    }
+
+    on_change_callback getListener(uint64_t key){
+        auto it = m_callbacks.find(key);
+        return it == m_callbacks.end() ? nullptr : it->second;
+    }
+
+    void clearListener(){
+        m_callbacks.clear();
+    }
 private:
     T m_val;
+    std::unordered_map<uint64_t, on_change_callback> m_callbacks;
 };
 
 
 class Config{
 public:
-    using ConfigVarMap = std::map<std::string, ConfigVarBase::pointer>;
+    using ConfigVarMap = std::unordered_map<std::string, ConfigVarBase::pointer>;
 
     template <typename T>
     static typename ConfigVar<T>::pointer Lookup(const std::string& name,
             const T& default_value, const std::string& description = ""){
-        auto temp = Lookup<T>(name);
-        if (temp) {
-            LOG_INFO(LOG_ROOT()) << "Lookup name=" << name << " exists.";
-            return temp;
-        }
 
+        auto it = GetDatas().find(name);
+
+        if (it != GetDatas().end()){
+            auto temp = std::dynamic_pointer_cast<ConfigVar<T>>(it->second);
+            if (temp){
+                LOG_INFO(LOG_ROOT()) << "Lookup name=" << name << " exists.";
+                return temp;
+            } else { //invalid type
+                LOG_ERROR(LOG_ROOT()) << "Lookup name=" << name << " exists, but type not " << typeid(T).name()
+                << " real type is " << it->second->getTypeName() << " " << it->second->toString();
+                return nullptr;
+            }
+        }
         if (name.find_first_not_of("abcdefghijklmnopqrstuvwxyz._0123456789") != std::string::npos){
             LOG_ERROR(LOG_ROOT()) << "Lookup name invalid " << name;
             throw std::invalid_argument(name);
         }
 
         typename ConfigVar<T>::pointer config(new ConfigVar<T>(name, default_value, description));
-        s_datas.insert(std::pair<std::string, ConfigVarBase::pointer>(name, config));
+        GetDatas().insert(std::pair<std::string, ConfigVarBase::pointer>(name, config));
         return config;
     }
 
     template <typename T>
     static typename ConfigVar<T>::pointer Lookup(const std::string& name){
-        auto it = s_datas.find(name);
-        if (it == s_datas.end()){
+        auto it = GetDatas().find(name);
+        if (it == GetDatas().end()){
             return nullptr;
         }
         //dynamic cast 会将基类指针cast到派生类指针
         return std::dynamic_pointer_cast<ConfigVar<T>>(it->second);
+        //此处返回空有两种情况
+        //1 key 不存在
+        //2 key 存在，但是需要的类型不一样
     }
 
     static void LoadFromYaml(const YAML::Node& root);
 
     static ConfigVarBase::pointer LookupBase(const std::string& name);
 private:
-    static ConfigVarMap s_datas;
+    //这里用一个私有static方法来获得static data, 防止s_datas未先于LookUp方法初始化
+    static ConfigVarMap& GetDatas(){
+        static ConfigVarMap s_datas;
+        return s_datas;
+    }
+
 
 };
 #endif //WEBFRAMEWORK_CONFIG_H

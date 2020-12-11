@@ -38,16 +38,19 @@
 #define LOG_FMT_FATAL(logger, fmt, ...)  LOG_FMR_LEVEL(logger, LogLevel::FATAL, fmt, __VA_ARGS__)
 
 #define LOG_ROOT() LoggerMgr::GetInstance()->getRoot()
+#define LOG_NAME(name) LoggerMgr::GetInstance()->getLogger(name)
 
 class Logger;
+class LoggerManager;
 //====================== Defination of LogLevel ======================
 class LogLevel {
 public:
     enum Level{
-        DEBUG = 1, INFO, WARN, ERROR, FATAL
+        UNKONWN = 0, DEBUG = 1, INFO = 2, WARN = 3, ERROR = 4, FATAL = 5
     };
 
     static const char* ToString(LogLevel::Level level);
+    static LogLevel::Level FromString(const std::string& str);
 };
 
 
@@ -151,10 +154,14 @@ public:
     };
 
     void init();
+
+    bool isError() const {
+        return m_error;
+    }
 private:
     std::vector<FormatItem::pointer> m_items;
     std::string m_pattern;
-
+    bool m_error = false;
 };
 
 //=============================================================
@@ -191,6 +198,8 @@ protected:
 
 //日志器 -> 定义日志类别
 class Logger : public std::enable_shared_from_this<Logger> {
+    friend class LoggerManager;
+
 public:
     using pointer = std::shared_ptr<Logger>;
 
@@ -205,6 +214,7 @@ public:
 
     void addAppender(LogAppender::pointer appender);
     void delAppender(LogAppender::pointer appender);
+    void clearAppender();
 
     LogLevel::Level getLevel(){
         return m_level;
@@ -218,11 +228,20 @@ public:
         return m_name;
     }
 
+    void setFormatter(LogFormatter::pointer val);
+    void setFormatter(const std::string& val);
+
+    LogFormatter::pointer getFormatter(){
+        return m_formatter;
+    }
 private:
     std::string m_name;
     LogLevel::Level m_level = LogLevel::DEBUG; //满足日志级别的才可输出
     std::list<LogAppender::pointer> m_appenders; //Appender列表
     LogFormatter::pointer m_formatter;
+
+    //当Logger没有Appender时，调用root Logger的log
+    Logger::pointer m_root;
 };
 
 class StdoutLogAppender : public LogAppender{

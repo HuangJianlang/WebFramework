@@ -5,11 +5,11 @@
 #include "config.h"
 #include <list>
 
-Config::ConfigVarMap Config::s_datas;
+//Config::ConfigVarMap Config::s_datas;
 
 ConfigVarBase::pointer Config::LookupBase(const std::string &name) {
-    auto it = s_datas.find(name);
-    return it == s_datas.end()? nullptr : it->second;
+    auto it = GetDatas().find(name);
+    return it == GetDatas().end()? nullptr : it->second;
 }
 
 // A:
