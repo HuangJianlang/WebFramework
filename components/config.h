@@ -282,7 +282,7 @@ public:
         return ss.str();
     }
 };
-//===========================stl support=====================
+//===========================stl support end=====================
 
 template<typename T, typename FromStr = LexicalCast<std::string, T>, typename ToStr = LexicalCast<T, std::string>>
 //这个类的主要作用是将来自字符串中的内容转换为简单类型（如int float等）
@@ -353,6 +353,7 @@ public:
         m_callbacks.clear();
     }
 private:
+    //这里用于保存所有的配置信息，若在yml中记录的set，这里就是set
     T m_val;
     std::unordered_map<uint64_t, on_change_callback> m_callbacks;
 };

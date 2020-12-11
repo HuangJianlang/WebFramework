@@ -1,0 +1,10 @@
+2020-12-11 17:05:42	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2020-12-11 17:08:45	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2020-12-11 17:14:58	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2020-12-11 17:21:56	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2020-12-11 17:21:56	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:74	system loggers: after setting new formatter
+

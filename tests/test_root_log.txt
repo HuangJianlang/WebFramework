@@ -1,0 +1,64 @@
+2020-12-11 17:05:42	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2020-12-11 17:08:45	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2020-12-11 17:14:58	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2020-12-11 17:21:56	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender

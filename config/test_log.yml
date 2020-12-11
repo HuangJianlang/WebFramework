@@ -1,0 +1,17 @@
+logs:
+  - name: root
+    level: INFO
+    format: '%d%T%m%n'
+    appenders:
+      - type: FileLogAppender
+        path: '../tests/test_root_log.txt'
+      - type: StdoutLogAppender
+
+  - name: system
+    level: DEBUG
+    format: '%d%T%m%n'
+    appenders:
+      - type: FileLogAppender
+        path: '../tests/test_system_log.txt'
+        format: '%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n'
+      - type: StdoutLogAppender

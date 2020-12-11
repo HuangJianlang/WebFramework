@@ -39,6 +39,8 @@ utils.h
 /Users/roy/Documents/C++/WebFramework/components/utils.h
 singleton.h
 /Users/roy/Documents/C++/WebFramework/components/singleton.h
+yaml-cpp/yaml.h
+-
 sstream
 -
 string
@@ -73,6 +75,8 @@ cstdint
 /Users/roy/Documents/C++/WebFramework/tests/test_config.cpp
 ../components/config.h
 /Users/roy/Documents/C++/WebFramework/components/config.h
+../components/log.h
+/Users/roy/Documents/C++/WebFramework/components/log.h
 yaml-cpp/yaml.h
 -
 boost/lexical_cast.hpp

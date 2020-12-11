@@ -30,10 +30,11 @@ static void ListAllMember(const std::string& prefix,
         }
     }
 }
+
 void Config::LoadFromYaml(const YAML::Node& root){
     std::list<std::pair<std::string, const YAML::Node>> all_nodes;
     ListAllMember("", root, all_nodes);
-
+    //{log:[[], []]}
     for(auto& node : all_nodes){
         std::string key = node.first;
         if (key.empty()){

@@ -1,3 +1,21 @@
+logs:
+ - name: root
+   level: INFO
+   format: '%d%T%m%n'
+   appenders:
+    - type: FileLogAppender
+      path: '../tests/test_log.txt'
+    - type: StdoutLogAppender
+
+ - name: system
+   level: DEBUG
+   format: '%d%T%m%n'
+   appenders:
+    - type: FileLogAppender
+      path: '../tests/test_log.txt'
+    - type: StdoutLogAppender
+
+
 system:
  port: 9900
  value: 15

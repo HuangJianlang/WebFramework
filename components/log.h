@@ -7,6 +7,8 @@
 
 #include "utils.h"
 #include "singleton.h"
+
+#include <yaml-cpp/yaml.h>
 #include <sstream>
 #include <string>
 #include <cstdint>
@@ -139,7 +141,7 @@ class LogFormatter {
 public:
     using pointer = std::shared_ptr<LogFormatter>;
 
-    explicit LogFormatter(const std::string& pattern);
+    LogFormatter(const std::string& pattern);
 
     //%t    %thread_id %m%n
     std::string format(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::pointer event);
@@ -158,6 +160,10 @@ public:
     bool isError() const {
         return m_error;
     }
+
+    const std::string getPattern(){
+        return m_pattern;
+    }
 private:
     std::vector<FormatItem::pointer> m_items;
     std::string m_pattern;
@@ -173,6 +179,7 @@ public:
     virtual ~LogAppender() = default;
 
     virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::pointer event) = 0;
+    virtual std::string toYamlString() = 0;
 
     void setLevel(LogLevel::Level level){
         m_level = level;
@@ -182,16 +189,34 @@ public:
         return m_level;
     }
 
-    void setFormatter(LogFormatter::pointer val){
+    void setFormatter(LogFormatter::pointer val, bool hasFormatter){
         m_formatter = val;
+        m_hasFormatter = hasFormatter;
     }
 
+    void setFormatter(LogFormatter::pointer val){
+        m_formatter = val;
+        if (m_formatter){
+            m_hasFormatter = true;
+        } else {
+            m_hasFormatter = false;
+        }
+    }
+
+    void setFormatter(const std::string& val){
+        setFormatter(std::make_shared<LogFormatter>(val));
+    }
     LogFormatter::pointer getFormatter(){
         return m_formatter;
     }
 
+    bool hasFormatter() const {
+        return m_hasFormatter;
+    }
+
 protected:
     LogLevel::Level m_level;
+    bool m_hasFormatter = false;
     LogFormatter::pointer m_formatter;
 };
 
@@ -234,6 +259,8 @@ public:
     LogFormatter::pointer getFormatter(){
         return m_formatter;
     }
+
+    std::string toYamlString();
 private:
     std::string m_name;
     LogLevel::Level m_level = LogLevel::DEBUG; //满足日志级别的才可输出
@@ -248,6 +275,7 @@ class StdoutLogAppender : public LogAppender{
 public:
     using pointer = std::shared_ptr<StdoutLogAppender>;
     virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::pointer event) override;
+    virtual std::string toYamlString() override;
 };
 
 class FileLogAppender : public LogAppender{
@@ -256,6 +284,7 @@ public:
     explicit FileLogAppender(const std::string& filename);
     virtual ~FileLogAppender() override;
     virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::pointer event) override ;
+    virtual std::string toYamlString() override;
 
     bool reopen();
 private:
@@ -273,10 +302,66 @@ public:
     Logger::pointer getRoot() const {
         return m_root;
     }
+
+    const std::string toYamlString(){
+        YAML::Node node;
+        for(auto& logger : m_loggers){
+            node.push_back(YAML::Load(logger.second->toYamlString()));
+        }
+        std::stringstream ss;
+        ss << node;
+        return ss.str();
+    }
 private:
     std::map<std::string, Logger::pointer> m_loggers;
     Logger::pointer m_root;
 };
 
 using LoggerMgr = Singleton<LoggerManager>;
+
+
+//以下两个结构体用于将配置文件中的参数保存管理
+/**
+ * logs:
+ *  -name:
+ *   level:
+ *   format:
+ *   appender:
+ *      - type:
+ *        path(filename)
+ *      - type:
+ */
+struct LogAppenderDefine{
+    int type=0; //1 File 2 Stdout
+    LogLevel::Level level = LogLevel::UNKONWN;
+    std::string format = "";
+    std::string file;
+
+    bool operator==(const LogAppenderDefine& other) const {
+        return type == other.type
+               && level == other.level
+               && format == other.format
+               && file == other.file;
+    }
+};
+
+struct LogDefine{
+    std::string name;
+    LogLevel::Level level = LogLevel::UNKONWN;
+    std::string format;
+
+    std::vector<LogAppenderDefine> appenders;
+
+    bool operator==(const LogDefine& other) const {
+        return name == other.name
+               && level == other.level
+               && format == other.format
+               && appenders == other.appenders;
+    }
+
+    bool operator<(const LogDefine& other) const {
+        return name < other.name;
+    }
+};
+
 #endif //WEBFRAMEWORK_LOG_H

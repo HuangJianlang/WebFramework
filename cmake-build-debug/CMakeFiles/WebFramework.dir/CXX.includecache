@@ -61,6 +61,8 @@ utils.h
 /Users/roy/Documents/C++/WebFramework/components/utils.h
 singleton.h
 /Users/roy/Documents/C++/WebFramework/components/singleton.h
+yaml-cpp/yaml.h
+-
 sstream
 -
 string
