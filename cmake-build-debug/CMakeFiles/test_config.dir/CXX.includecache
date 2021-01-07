@@ -9,6 +9,8 @@
 /Users/roy/Documents/C++/WebFramework/components/config.h
 log.h
 /Users/roy/Documents/C++/WebFramework/components/log.h
+thread.h
+/Users/roy/Documents/C++/WebFramework/components/thread.h
 memory
 -
 string
@@ -39,6 +41,8 @@ utils.h
 /Users/roy/Documents/C++/WebFramework/components/utils.h
 singleton.h
 /Users/roy/Documents/C++/WebFramework/components/singleton.h
+thread.h
+/Users/roy/Documents/C++/WebFramework/components/thread.h
 yaml-cpp/yaml.h
 -
 sstream
@@ -64,12 +68,34 @@ map
 memory
 -
 
+/Users/roy/Documents/C++/WebFramework/components/thread.h
+pthread.h
+-
+thread
+-
+functional
+-
+memory
+-
+atomic
+-
+dispatch/dispatch.h
+-
+libkern/OSAtomic.h
+-
+semaphore.h
+-
+
 /Users/roy/Documents/C++/WebFramework/components/utils.h
 pthread.h
 -
 sys/types.h
 -
 cstdint
+-
+vector
+-
+string
 -
 
 /Users/roy/Documents/C++/WebFramework/tests/test_config.cpp

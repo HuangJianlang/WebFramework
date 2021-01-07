@@ -6,6 +6,7 @@
 #define WEBFRAMEWORK_CONFIG_H
 
 #include "log.h"
+#include "thread.h"
 #include <memory>
 #include <string>
 #include <sstream>
@@ -288,6 +289,7 @@ template<typename T, typename FromStr = LexicalCast<std::string, T>, typename To
 //这个类的主要作用是将来自字符串中的内容转换为简单类型（如int float等）
 class ConfigVar : public ConfigVarBase {
 public:
+    using RWMutexType = RWMutex;
     using pointer = std::shared_ptr<ConfigVar>;
     using on_change_callback = std::function<void (const T& old_value, const T& new_value)>;
 
@@ -300,6 +302,7 @@ public:
     virtual std::string toString() override {
         try {
             //return boost::lexical_cast<std::string>(m_val);
+            RWMutexType::ReadLock lock(m_mutex);
             return ToStr()(m_val);
         } catch (std::exception& e) {
             LOG_ERROR(LOG_ROOT()) << "ConfigVar::toString exception" << e.what() << " convert: " << typeid(m_val).name() << " to string";
@@ -318,17 +321,22 @@ public:
         return false;
     };
 
-    const T getValue() const {
+    const T getValue() {
+        RWMutexType::ReadLock lock(m_mutex);
         return m_val;
     }
 
     void setValue(const T& val) {
-        if (val == m_val){
-            return;
+        {
+            RWMutexType::ReadLock lock(m_mutex);
+            if (val == m_val){
+                return;
+            }
+            for (auto& i : m_callbacks){
+                i.second(m_val, val);
+            }
         }
-        for (auto& i : m_callbacks){
-            i.second(m_val, val);
-        }
+        RWMutexType::WriteLock lock(m_mutex);
         m_val = val;
     }
 
@@ -336,15 +344,21 @@ public:
         return typeid(T).name();
     }
 
-    void addListener(uint64_t key, on_change_callback cb) {
-        m_callbacks[key] = cb;
+    uint64_t addListener(on_change_callback cb) {
+        static uint64_t s_func_id;
+        RWMutexType::WriteLock lock(m_mutex);
+        ++s_func_id;
+        m_callbacks[s_func_id] = cb;
+        return s_func_id;
     }
 
     void delListener(uint64_t key){
+        RWMutexType::WriteLock lock(m_mutex);
         m_callbacks.erase(key);
     }
 
     on_change_callback getListener(uint64_t key){
+        RWMutexType::ReadLock lock(m_mutex);
         auto it = m_callbacks.find(key);
         return it == m_callbacks.end() ? nullptr : it->second;
     }
@@ -356,17 +370,19 @@ private:
     //这里用于保存所有的配置信息，若在yml中记录的set，这里就是set
     T m_val;
     std::unordered_map<uint64_t, on_change_callback> m_callbacks;
+    RWMutexType m_mutex;
 };
 
 
 class Config{
 public:
     using ConfigVarMap = std::unordered_map<std::string, ConfigVarBase::pointer>;
+    using RWMutexType = RWMutex;
 
     template <typename T>
     static typename ConfigVar<T>::pointer Lookup(const std::string& name,
             const T& default_value, const std::string& description = ""){
-
+        RWMutexType::WriteLock lock(GetMutex());
         auto it = GetDatas().find(name);
 
         if (it != GetDatas().end()){
@@ -392,6 +408,7 @@ public:
 
     template <typename T>
     static typename ConfigVar<T>::pointer Lookup(const std::string& name){
+        RWMutexType::ReadLock lock(GetMutex());
         auto it = GetDatas().find(name);
         if (it == GetDatas().end()){
             return nullptr;
@@ -406,6 +423,8 @@ public:
     static void LoadFromYaml(const YAML::Node& root);
 
     static ConfigVarBase::pointer LookupBase(const std::string& name);
+
+    static void Visit(std::function<void(ConfigVarBase::pointer)> callback);
 private:
     //这里用一个私有static方法来获得static data, 防止s_datas未先于LookUp方法初始化
     static ConfigVarMap& GetDatas(){
@@ -413,6 +432,10 @@ private:
         return s_datas;
     }
 
+    static RWMutexType& GetMutex(){
+        static RWMutexType s_mutex;
+        return s_mutex;
+    }
 
 };
 #endif //WEBFRAMEWORK_CONFIG_H

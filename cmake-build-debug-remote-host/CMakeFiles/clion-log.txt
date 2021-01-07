@@ -1,0 +1,5 @@
+/usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /root/webframework
+-- Configuring done
+***/usr/local/lib/libyaml-cpp.a
+-- Generating done
+-- Build files have been written to: /root/webframework/cmake-build-debug-remote-host

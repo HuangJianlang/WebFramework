@@ -83,6 +83,7 @@ test_log_EXTERNAL_OBJECTS =
 test_log: CMakeFiles/test_log.dir/tests/test_log.cpp.o
 test_log: CMakeFiles/test_log.dir/build.make
 test_log: libWebFramework.dylib
+test_log: /usr/local/lib/libyaml-cpp.dylib
 test_log: CMakeFiles/test_log.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/roy/Documents/C++/WebFramework/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test_log"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_log.dir/link.txt --verbose=$(VERBOSE)

@@ -8,3 +8,43 @@
 
 2020-12-11 17:21:56	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:74	system loggers: after setting new formatter
 
+2020-12-17 16:37:38	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2020-12-17 16:37:38	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:74	system loggers: after setting new formatter
+
+2020-12-17 16:53:07	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2020-12-17 16:53:07	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:74	system loggers: after setting new formatter
+
+2020-12-17 16:56:06	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2020-12-17 16:56:06	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:74	system loggers: after setting new formatter
+
+2020-12-17 16:56:13	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2020-12-17 16:56:13	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:74	system loggers: after setting new formatter
+
+2020-12-19 16:49:01	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2020-12-19 16:49:01	4294967295	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:74	system loggers: after setting new formatter
+
+2021-01-03 14:50:44	5590521	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2021-01-03 14:50:44	5590521	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:74	system loggers: after setting new formatter
+
+2021-01-03 14:55:40	5597885	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2021-01-03 14:55:40	5597885	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:74	system loggers: after setting new formatter
+
+2021-01-07 00:24:10	8512675	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2021-01-07 00:24:10	8512675	0	[INFO]	/Users/roy/Documents/C++/WebFramework/tests/test_config.cpp:74	system loggers: after setting new formatter
+
+2021-01-07 01:29:04	3170	0	[INFO]	/root/webframework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2021-01-07 01:29:04	3170	0	[INFO]	/root/webframework/tests/test_config.cpp:74	system loggers: after setting new formatter
+
+2021-01-07 01:30:39	3696	0	[INFO]	/root/webframework/tests/test_config.cpp:71	system loggers: this is system logger
+
+2021-01-07 01:30:39	3696	0	[INFO]	/root/webframework/tests/test_config.cpp:74	system loggers: after setting new formatter
+

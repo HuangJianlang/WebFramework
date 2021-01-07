@@ -62,3 +62,238 @@
       format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
       path: ../tests/test_system_log.txt
     - type: StdoutLogAppender
+2020-12-17 16:37:38	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2020-12-17 16:53:07	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2020-12-17 16:56:06	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2020-12-17 16:56:13	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2020-12-19 16:49:01	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2021-01-03 14:50:44	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2021-01-03 14:55:40	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2021-01-03 14:55:40	name=system.int_unordered_map description=system int unordered_map typename=NSt3__113unordered_mapINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEiNS_4hashIS6_EENS_8equal_toIS6_EENS4_INS_4pairIKS6_iEEEEEE value=key: 50
+2021-01-03 14:55:40	name=system.int_map description=system int map typename=NSt3__13mapINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEiNS_4lessIS6_EENS4_INS_4pairIKS6_iEEEEEE value=key: 50
+2021-01-03 14:55:40	name=system.int_hashset description=system hashset typename=NSt3__113unordered_setIiNS_4hashIiEENS_8equal_toIiEENS_9allocatorIiEEEE value=- 10
+- 11
+- 12
+2021-01-03 14:55:40	name=system.int_set description=system set typename=NSt3__13setIiNS_4lessIiEENS_9allocatorIiEEEE value=- 7
+- 8
+- 9
+2021-01-03 14:55:40	name=system.int_list description=system list typename=NSt3__14listIiNS_9allocatorIiEEEE value=- 4
+- 5
+- 6
+2021-01-03 14:55:40	name=system.int_vec description=system vector typename=NSt3__16vectorIiNS_9allocatorIiEEEE value=- 1
+- 2
+- 3
+2021-01-03 14:55:40	name=system.value description=system value typename=f value=10.1199999
+2021-01-03 14:55:40	name=system.port description=system port typename=i value=8080
+2021-01-03 14:55:40	name=logs description=logs config typename=NSt3__13setI9LogDefineNS_4lessIS1_EENS_9allocatorIS1_EEEE value=- "name: root\nlevel: INFO\nformat: \"%d%T%m%n\"\nappenders:\n  - type: FileLogAppender\n    file: ../tests/test_root_log.txt\n  - type: StdoutLogAppender"
+- "name: system\nlevel: DEBUG\nformat: \"%d%T%m%n\"\nappenders:\n  - type: FileLogAppender\n    file: ../tests/test_system_log.txt\n  - type: StdoutLogAppender"
+2021-01-07 00:24:10	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2021-01-07 00:24:10	name=system.int_unordered_map description=system int unordered_map typename=NSt3__113unordered_mapINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEiNS_4hashIS6_EENS_8equal_toIS6_EENS4_INS_4pairIKS6_iEEEEEE value=key: 50
+2021-01-07 00:24:10	name=system.int_map description=system int map typename=NSt3__13mapINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEiNS_4lessIS6_EENS4_INS_4pairIKS6_iEEEEEE value=key: 50
+2021-01-07 00:24:10	name=system.int_hashset description=system hashset typename=NSt3__113unordered_setIiNS_4hashIiEENS_8equal_toIiEENS_9allocatorIiEEEE value=- 10
+- 11
+- 12
+2021-01-07 00:24:10	name=system.int_set description=system set typename=NSt3__13setIiNS_4lessIiEENS_9allocatorIiEEEE value=- 7
+- 8
+- 9
+2021-01-07 00:24:10	name=system.int_list description=system list typename=NSt3__14listIiNS_9allocatorIiEEEE value=- 4
+- 5
+- 6
+2021-01-07 00:24:10	name=system.int_vec description=system vector typename=NSt3__16vectorIiNS_9allocatorIiEEEE value=- 1
+- 2
+- 3
+2021-01-07 00:24:10	name=system.value description=system value typename=f value=10.1199999
+2021-01-07 00:24:10	name=system.port description=system port typename=i value=8080
+2021-01-07 00:24:10	name=fiber.stack_size description=fiber stack size typename=j value=131072
+2021-01-07 00:24:10	name=logs description=logs config typename=NSt3__13setI9LogDefineNS_4lessIS1_EENS_9allocatorIS1_EEEE value=- "name: root\nlevel: INFO\nformat: \"%d%T%m%n\"\nappenders:\n  - type: FileLogAppender\n    file: ../tests/test_root_log.txt\n  - type: StdoutLogAppender"
+- "name: system\nlevel: DEBUG\nformat: \"%d%T%m%n\"\nappenders:\n  - type: FileLogAppender\n    file: ../tests/test_system_log.txt\n  - type: StdoutLogAppender"
+2021-01-07 01:29:04	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2021-01-07 01:29:04	name=system.int_unordered_map description=system int unordered_map typename=St13unordered_mapISsiSt4hashISsESt8equal_toISsESaISt4pairIKSsiEEE value=key: 50
+2021-01-07 01:29:04	name=system.int_map description=system int map typename=St3mapISsiSt4lessISsESaISt4pairIKSsiEEE value=key: 50
+2021-01-07 01:29:04	name=system.int_set description=system set typename=St3setIiSt4lessIiESaIiEE value=- 7
+- 8
+- 9
+2021-01-07 01:29:04	name=system.int_vec description=system vector typename=St6vectorIiSaIiEE value=- 1
+- 2
+- 3
+2021-01-07 01:29:04	name=system.int_hashset description=system hashset typename=St13unordered_setIiSt4hashIiESt8equal_toIiESaIiEE value=- 12
+- 10
+- 11
+2021-01-07 01:29:04	name=system.value description=system value typename=f value=10.1199999
+2021-01-07 01:29:04	name=system.int_list description=system list typename=St4listIiSaIiEE value=- 4
+- 5
+- 6
+2021-01-07 01:29:04	name=system.port description=system port typename=i value=8080
+2021-01-07 01:29:04	name=fiber.stack_size description=fiber stack size typename=j value=131072
+2021-01-07 01:29:04	name=logs description=logs config typename=St3setI9LogDefineSt4lessIS0_ESaIS0_EE value=- "name: root\nlevel: INFO\nformat: \"%d%T%m%n\"\nappenders:\n  - type: FileLogAppender\n    file: ../tests/test_root_log.txt\n  - type: StdoutLogAppender"
+- "name: system\nlevel: DEBUG\nformat: \"%d%T%m%n\"\nappenders:\n  - type: FileLogAppender\n    file: ../tests/test_system_log.txt\n  - type: StdoutLogAppender"
+2021-01-07 01:30:39	root loggers:
+- name: root
+  level: INFO
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      path: ../tests/test_root_log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  format: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      format: "%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T%f:%l%T%m%n"
+      path: ../tests/test_system_log.txt
+    - type: StdoutLogAppender
+2021-01-07 01:30:39	name=system.int_unordered_map description=system int unordered_map typename=St13unordered_mapISsiSt4hashISsESt8equal_toISsESaISt4pairIKSsiEEE value=key: 50
+2021-01-07 01:30:39	name=system.int_map description=system int map typename=St3mapISsiSt4lessISsESaISt4pairIKSsiEEE value=key: 50
+2021-01-07 01:30:39	name=system.int_set description=system set typename=St3setIiSt4lessIiESaIiEE value=- 7
+- 8
+- 9
+2021-01-07 01:30:39	name=system.int_vec description=system vector typename=St6vectorIiSaIiEE value=- 1
+- 2
+- 3
+2021-01-07 01:30:39	name=system.int_hashset description=system hashset typename=St13unordered_setIiSt4hashIiESt8equal_toIiESaIiEE value=- 12
+- 10
+- 11
+2021-01-07 01:30:39	name=system.value description=system value typename=f value=10.1199999
+2021-01-07 01:30:39	name=system.int_list description=system list typename=St4listIiSaIiEE value=- 4
+- 5
+- 6
+2021-01-07 01:30:39	name=system.port description=system port typename=i value=8080
+2021-01-07 01:30:39	name=fiber.stack_size description=fiber stack size typename=j value=131072
+2021-01-07 01:30:39	name=logs description=logs config typename=St3setI9LogDefineSt4lessIS0_ESaIS0_EE value=- "name: root\nlevel: INFO\nformat: \"%d%T%m%n\"\nappenders:\n  - type: FileLogAppender\n    file: ../tests/test_root_log.txt\n  - type: StdoutLogAppender"
+- "name: system\nlevel: DEBUG\nformat: \"%d%T%m%n\"\nappenders:\n  - type: FileLogAppender\n    file: ../tests/test_system_log.txt\n  - type: StdoutLogAppender"

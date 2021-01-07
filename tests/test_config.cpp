@@ -78,5 +78,12 @@ void test_config_log(){
 int main(int argc, char* argv[]){
     std::cout << "test for loading yaml\n";
     test_config_log();
+
+    Config::Visit([](ConfigVarBase::pointer var) {
+        LOG_INFO(LOG_ROOT()) << "name=" << var->getName()
+                           << " description=" << var->getDescription()
+                           << " typename=" << var->getTypeName()
+                           << " value=" << var->toString();
+    });
     return 0;
 }

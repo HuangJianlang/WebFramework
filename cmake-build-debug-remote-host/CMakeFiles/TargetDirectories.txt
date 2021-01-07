@@ -1,0 +1,9 @@
+/root/webframework/cmake-build-debug-remote-host/CMakeFiles/rebuild_cache.dir
+/root/webframework/cmake-build-debug-remote-host/CMakeFiles/edit_cache.dir
+/root/webframework/cmake-build-debug-remote-host/CMakeFiles/test_scheduler.dir
+/root/webframework/cmake-build-debug-remote-host/CMakeFiles/test_log.dir
+/root/webframework/cmake-build-debug-remote-host/CMakeFiles/WebFramework.dir
+/root/webframework/cmake-build-debug-remote-host/CMakeFiles/test_config.dir
+/root/webframework/cmake-build-debug-remote-host/CMakeFiles/test_thread.dir
+/root/webframework/cmake-build-debug-remote-host/CMakeFiles/test_utils.dir
+/root/webframework/cmake-build-debug-remote-host/CMakeFiles/test_fiber.dir

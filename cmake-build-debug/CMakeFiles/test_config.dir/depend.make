@@ -4,6 +4,7 @@
 CMakeFiles/test_config.dir/tests/test_config.cpp.o: ../components/config.h
 CMakeFiles/test_config.dir/tests/test_config.cpp.o: ../components/log.h
 CMakeFiles/test_config.dir/tests/test_config.cpp.o: ../components/singleton.h
+CMakeFiles/test_config.dir/tests/test_config.cpp.o: ../components/thread.h
 CMakeFiles/test_config.dir/tests/test_config.cpp.o: ../components/utils.h
 CMakeFiles/test_config.dir/tests/test_config.cpp.o: ../tests/test_config.cpp
 CMakeFiles/test_config.dir/tests/test_config.cpp.o: /usr/local/include/boost/array.hpp

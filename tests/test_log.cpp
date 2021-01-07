@@ -34,6 +34,7 @@ int main(int argc, char* argv[]){
 
     auto it = LoggerMgr ::GetInstance()->getLogger("xx");
     LOG_INFO(it) << "tests for singleton\n";
+    LOG_INFO(it) << "testing for GetThreadId " << GetThreadId();
     cout << "Testing Log ends\n";
     return 0;
 }

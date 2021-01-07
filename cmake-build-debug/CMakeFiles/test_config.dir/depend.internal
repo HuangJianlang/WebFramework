@@ -5,6 +5,7 @@ CMakeFiles/test_config.dir/tests/test_config.cpp.o
  /Users/roy/Documents/C++/WebFramework/components/config.h
  /Users/roy/Documents/C++/WebFramework/components/log.h
  /Users/roy/Documents/C++/WebFramework/components/singleton.h
+ /Users/roy/Documents/C++/WebFramework/components/thread.h
  /Users/roy/Documents/C++/WebFramework/components/utils.h
  /Users/roy/Documents/C++/WebFramework/tests/test_config.cpp
  /usr/local/include/boost/array.hpp

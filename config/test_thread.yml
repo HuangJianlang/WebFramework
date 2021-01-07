@@ -1,0 +1,6 @@
+logs:
+  - name: root
+    level: INFO
+    appenders:
+      - type: FileLogAppender
+        path: '../tests/test_thread_log.txt'

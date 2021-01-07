@@ -8,6 +8,7 @@
 //Config::ConfigVarMap Config::s_datas;
 
 ConfigVarBase::pointer Config::LookupBase(const std::string &name) {
+    RWMutexType::ReadLock lock(GetMutex());
     auto it = GetDatas().find(name);
     return it == GetDatas().end()? nullptr : it->second;
 }
@@ -53,5 +54,13 @@ void Config::LoadFromYaml(const YAML::Node& root){
                 base->fromString(ss.str());
             }
         }
+    }
+}
+
+void Config::Visit(std::function<void (ConfigVarBase::pointer)> callback) {
+    RWMutexType::ReadLock lock(GetMutex());
+    ConfigVarMap& map = GetDatas();
+    for (auto it = map.begin(); it != map.end(); ++it){
+        callback(it->second);
     }
 }

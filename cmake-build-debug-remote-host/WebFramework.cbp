@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="WebFramework"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_scheduler">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/test_scheduler" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 test_scheduler"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_scheduler/fast">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/test_scheduler" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 test_scheduler/fast"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_log">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/test_log" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 test_log"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_log/fast">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/test_log" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 test_log/fast"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="WebFramework">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/libWebFramework.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 WebFramework"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="WebFramework/fast">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/libWebFramework.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 WebFramework/fast"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_config">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/test_config" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 test_config"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_config/fast">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/test_config" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 test_config/fast"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_thread">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/test_thread" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 test_thread"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_thread/fast">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/test_thread" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 test_thread/fast"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_utils">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/test_utils" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 test_utils"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_utils/fast">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/test_utils" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 test_utils/fast"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_fiber">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/test_fiber" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 test_fiber"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_fiber/fast">
+				<Option output="/root/webframework/cmake-build-debug-remote-host/test_fiber" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/root/webframework/cmake-build-debug-remote-host"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/root/webframework/."/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../include/c++/4.8.5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 test_fiber/fast"/>
+					<CompileFile command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -f &quot;/root/webframework/cmake-build-debug-remote-host/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/root/webframework/components/config.cpp">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/root/webframework/components/config.h">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/root/webframework/components/fiber.cpp">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/root/webframework/components/fiber.h">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/root/webframework/components/log.cpp">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/root/webframework/components/log.h">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/root/webframework/components/scheduler.cpp">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/root/webframework/components/scheduler.h">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/root/webframework/components/thread.cpp">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/root/webframework/components/thread.h">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/root/webframework/components/utils.cpp">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/root/webframework/components/utils.h">
+			<Option target="WebFramework"/>
+		</Unit>
+		<Unit filename="/root/webframework/tests/test_config.cpp">
+			<Option target="test_config"/>
+		</Unit>
+		<Unit filename="/root/webframework/tests/test_fiber.cpp">
+			<Option target="test_fiber"/>
+		</Unit>
+		<Unit filename="/root/webframework/tests/test_log.cpp">
+			<Option target="test_log"/>
+		</Unit>
+		<Unit filename="/root/webframework/tests/test_scheduler.cpp">
+			<Option target="test_scheduler"/>
+		</Unit>
+		<Unit filename="/root/webframework/tests/test_thread.cpp">
+			<Option target="test_thread"/>
+		</Unit>
+		<Unit filename="/root/webframework/tests/test_utils.cpp">
+			<Option target="test_utils"/>
+		</Unit>
+		<Unit filename="/root/webframework/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

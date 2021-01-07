@@ -7,6 +7,7 @@
 
 #include "utils.h"
 #include "singleton.h"
+#include "thread.h"
 
 #include <yaml-cpp/yaml.h>
 #include <sstream>
@@ -21,7 +22,7 @@
 
 #define LOG_LEVEL(logger, level) \
     if (logger->getLevel() <= level) \
-        LogEventWrap(LogEvent::pointer(new LogEvent(logger, level, __FILE__, __LINE__, 0, GetThreadId(), GetFiberId(), time(0)))).getStringstream()
+        LogEventWrap(LogEvent::pointer(new LogEvent(logger, level, __FILE__, __LINE__, 0, GetThreadId(), GetFiberId(), time(0), Thread::GetName()))).getStringstream()
 
 #define LOG_DEBUG(logger) LOG_LEVEL(logger, LogLevel::DEBUG)
 #define LOG_INFO(logger) LOG_LEVEL(logger, LogLevel::INFO)
@@ -31,7 +32,7 @@
 
 #define LOG_FMR_LEVEL(logger, level, fmt, ...) \
     if (logger->getLevel() <= level) \
-        LogEventWrap(LogEvent::pointer(new LogEvent(logger, level, __FILE__, __LINE__, 0, GetThreadId(), GetFiberId(), time(0)))).getEvent()->format(fmt, __VA_ARGS__)
+        LogEventWrap(LogEvent::pointer(new LogEvent(logger, level, __FILE__, __LINE__, 0, GetThreadId(), GetFiberId(), time(0), Thread::GetName()))).getEvent()->format(fmt, __VA_ARGS__)
 
 #define LOG_FMT_DEBUT(logger, fmt, ...)  LOG_FMR_LEVEL(logger, LogLevel::DEBUG, fmt, __VA_ARGS__)
 #define LOG_FMT_INFO(logger, fmt, ...)  LOG_FMR_LEVEL(logger, LogLevel::INFO, fmt, __VA_ARGS__)
@@ -60,7 +61,11 @@ public:
 class LogEvent {
 public:
     using pointer = std::shared_ptr<LogEvent>;
-    LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, int32_t line, uint32_t elapse, uint32_t threadid, uint32_t fiberid, uint32_t time);
+    LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level
+            , const char* file, int32_t line
+            , uint32_t elapse, uint32_t threadid
+            , uint32_t fiberid, uint32_t time
+            , const std::string& thread_name);
     ~LogEvent();
 
     const char* getFile() const {
@@ -91,6 +96,10 @@ public:
         return m_sstream.str();
     }
 
+    const std::string& getThreadName() const {
+        return m_thread_name;
+    }
+
     std::stringstream& getStringStream() {
         return m_sstream;
     }
@@ -109,6 +118,7 @@ private:
     const char* m_file = nullptr;
     int32_t m_line = 0; // 行号
     uint32_t m_threadid = 0;
+    std::string m_thread_name;
     uint32_t m_elapse = 0; //程序启动到现在的毫秒数
     //协程id
     uint32_t m_fiberid = 0;
@@ -175,7 +185,9 @@ private:
 //日志输出路径
 class LogAppender {
 public:
+    //friend class Logger;
     using pointer = std::shared_ptr<LogAppender>;
+    using MutexType = Spinlock;
     virtual ~LogAppender() = default;
 
     virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::pointer event) = 0;
@@ -190,6 +202,7 @@ public:
     }
 
     void setFormatter(LogFormatter::pointer val, bool hasFormatter){
+        MutexType::Lock lock(m_mutex);
         m_formatter = val;
         m_hasFormatter = hasFormatter;
     }
@@ -204,9 +217,12 @@ public:
     }
 
     void setFormatter(const std::string& val){
+        MutexType::Lock lock(m_mutex);
         setFormatter(std::make_shared<LogFormatter>(val));
     }
+
     LogFormatter::pointer getFormatter(){
+        MutexType::Lock lock(m_mutex);
         return m_formatter;
     }
 
@@ -217,6 +233,7 @@ public:
 protected:
     LogLevel::Level m_level;
     bool m_hasFormatter = false;
+    MutexType m_mutex;
     LogFormatter::pointer m_formatter;
 };
 
@@ -227,6 +244,7 @@ class Logger : public std::enable_shared_from_this<Logger> {
 
 public:
     using pointer = std::shared_ptr<Logger>;
+    using MutexType = Spinlock;
 
     explicit Logger(const std::string& name = "root");
     void log(LogLevel::Level level, LogEvent::pointer event);
@@ -257,6 +275,7 @@ public:
     void setFormatter(const std::string& val);
 
     LogFormatter::pointer getFormatter(){
+        MutexType::Lock lock(m_mutex);
         return m_formatter;
     }
 
@@ -269,6 +288,8 @@ private:
 
     //当Logger没有Appender时，调用root Logger的log
     Logger::pointer m_root;
+
+    MutexType m_mutex;
 };
 
 class StdoutLogAppender : public LogAppender{
@@ -294,6 +315,7 @@ private:
 
 class LoggerManager{
 public:
+    using MutexType = Spinlock;
     LoggerManager();
     Logger::pointer getLogger(const std::string& name);
 
@@ -304,6 +326,7 @@ public:
     }
 
     const std::string toYamlString(){
+        MutexType::Lock lock(m_mutex);
         YAML::Node node;
         for(auto& logger : m_loggers){
             node.push_back(YAML::Load(logger.second->toYamlString()));
@@ -313,6 +336,7 @@ public:
         return ss.str();
     }
 private:
+    MutexType m_mutex;
     std::map<std::string, Logger::pointer> m_loggers;
     Logger::pointer m_root;
 };
